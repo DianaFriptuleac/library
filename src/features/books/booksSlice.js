@@ -6,7 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
   const responce = await fetch(`https://gutendex.com/books`);
   const data = await responce.json();
-  return data.results.sort(() => 0.5 - Math.random()).slice(0, 20); //20 libri casuali
+  return data.results.sort(() => 0.5 - Math.random()).slice(0, 30); //20 libri casuali
 });
 
 export const fetchBookById = createAsyncThunk(
