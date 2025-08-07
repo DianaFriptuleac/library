@@ -1,0 +1,59 @@
+.all-books-bg {
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+.all-books-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/imgages/bg-book.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+.book-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  border-radius: 5px;
+  background: #cec3c1;
+}
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.book-image-container {
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 300px;
+}
+.book-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.book-title {
+  color: #5d4037;
+  font-size: 0.9rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Numero di righe da mostrare */
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  text-align: center;
+  line-height: 1.2em;
+  height: calc(1.2em * 2); /* Altezza per 2 righe */
+}
