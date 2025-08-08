@@ -7,6 +7,7 @@ import SingleBook from "./components/SingleBook";
 import Home from "./components/Home";
 import CustomFooter from "./components/CustomFooter";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import LoginRegistration from "./components/LoginRegistration";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/allbooks" element={<AllBooks />} />
           <Route path="/book/:id" element={<SingleBook />} />
+          <Route path="/auth" element={<LoginRegistration/>}/>
         </Routes>
       </main>
       <footer>

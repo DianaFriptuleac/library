@@ -13,6 +13,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchBooks } from "../features/books/booksSlice";
+import { FaRegCircleUser } from "react-icons/fa6";
 const CustomNavbar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
@@ -37,12 +38,10 @@ const CustomNavbar = () => {
             className="d-inline-block align-top"
           />{" "}
         </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+        />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Navbar.Toggle
-            aria-controls="responsive-navbar-nav"
-            className="d-flex align-items-center justify-content-center"
-          />
-
           <Form className="d-flex mx-auto nav-serach" onSubmit={handleSearch}>
             <FormControl
               type="search"
@@ -64,6 +63,9 @@ const CustomNavbar = () => {
             <Nav.Link href="#">About</Nav.Link>
             <Nav.Link href="/allbooks">Shop</Nav.Link>
             <Nav.Link href="#">Contacts</Nav.Link>
+            <Nav.Link href="/auth">
+              <FaRegCircleUser />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
