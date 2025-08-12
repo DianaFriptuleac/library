@@ -36,10 +36,15 @@
   align-items: center;
 }
 .summary_col h4{
-    color: #3e2723;;
+    color: #3e2723;
 }
 .summary_col p {
   width: 75%;
   font-weight: 600;
   font-size: large;
+}
+.shop-icon{
+ font-size: 2em;
+padding: 5px;
+cursor: pointer;
 }
