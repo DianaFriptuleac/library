@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import CustomFooter from "./components/CustomFooter";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Registration from "./components/Registration";
+import Login from "./components/Login";
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/allbooks" element={<AllBooks />} />
           <Route path="/book/:id" element={<SingleBook />} />
-          <Route path="/auth" element={<Registration/>}/>
+          <Route path="/register" element={<Registration/>}/>
+          <Route path="login" element={<Login/>}/>
         </Routes>
       </main>
       <footer>

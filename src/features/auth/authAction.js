@@ -6,11 +6,12 @@ import {
   writeUsers,
 } from "./storage";
 
-export const REGISTER_USER = "REGISTE_USER";
+//tipi di action
+export const REGISTER_USER = "REGISTER_USER";
 export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
 
-//Register
+//Register user localmente
 export const registerUserLocal = (userData) => (dispatch) => {
   const users = readUsers();
   const exists = users.some(
@@ -20,6 +21,7 @@ export const registerUserLocal = (userData) => (dispatch) => {
     throw new Error("Email already registered.");
   }
 
+  // new user object
   const newUser = {
     firstName: userData.firstName.trim(),
     lastName: userData.lastName.trim(),
@@ -28,8 +30,9 @@ export const registerUserLocal = (userData) => (dispatch) => {
     password: userData.password,
   };
 
-  writeUsers([...users, newUser]);
+  writeUsers([...users, newUser]); //salva la nuova lista utenti
 
+  //Aggiorna stato Redux con l'ultimo utente registrato
   dispatch({
     type: REGISTER_USER,
     payload: {
@@ -65,7 +68,7 @@ export const loginUserLocal =
         email: found.email,
       },
     };
-    writeAuth(auth);
+    writeAuth(auth); //salva dati di autenticazione nel localStorage
     dispatch({
       type: LOGIN_USER,
       payload: { token: auth.token, user: auth.user },

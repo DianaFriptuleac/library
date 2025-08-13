@@ -1,13 +1,14 @@
 import { LOGIN_USER, LOGOUT_USER, REGISTER_USER } from "./authAction";
 import { readAuth } from "./storage";
 
+//read dati di autenticazione salvati
 const savedAuth = readAuth();
 
 const initialState = {
   userId: savedAuth?.user?.id || null,
   token: savedAuth?.token || null,
   user: savedAuth?.user || null,
-  isAuthenticated: !!savedAuth,
+  isAuthenticated: !!savedAuth, // true- se auth e salvato
   lastRegistrated: null,
 };
 
@@ -16,7 +17,7 @@ const authReducer = (state = initialState, action) => {
     case REGISTER_USER:
       return {
         ...state,
-        lastRegistrated: action.payload,
+        lastRegistrated: action.payload, //aggiorna l'ultimo registrato
       };
 
     case LOGIN_USER:
